@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student OS Dashboard</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Mobile Optimization -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Chart Library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <h2>📘 Student OS</h2>
+    <button onclick="toggleTheme()">🌙</button>
+  </div>
+
+  <!-- USER WELCOME -->
+  <h3 id="welcome"></h3>
+
+  <!-- XP + STREAK PANEL -->
+  <div class="card glass">
+    <h3>🎮 Your Progress</h3>
+
+    <p id="xpBox">XP: 0</p>
+    <p id="streakBox">🔥 Streak: 0</p>
+
+  </div>
+
+  <!-- AI INSIGHT -->
+  <div class="card glass">
+    <h3>🧠 AI Study Insight</h3>
+    <p id="aiBox">Loading insights...</p>
+  </div>
+
+  <!-- NAVIGATION BAR (Mobile Style) -->
+  <div class="nav">
+
+    <button onclick="show('home')">🏠</button>
+    <button onclick="show('habits')">🎯</button>
+    <button onclick="show('progress')">📊</button>
+    <button onclick="show('heatmap')">🔥</button>
+
+  </div>
+
+  <!-- ================= HOME PAGE ================= -->
+  <div id="home" class="page active">
+
+    <div class="card">
+
+      <h3>📅 Task Manager</h3>
+
+      <input id="task" placeholder="Enter new task">
+      <input type="date" id="date">
+
+      <button onclick="addTask()">Add Task</button>
+
+      <ul id="taskList"></ul>
+
+    </div>
+
+  </div>
+
+  <!-- ================= HABITS PAGE ================= -->
+  <div id="habits" class="page">
+
+    <div class="card">
+
+      <h3>🎯 Habit Tracker</h3>
+
+      <input id="habit" placeholder="New habit">
+      <button onclick="addHabit()">Add Habit</button>
+
+      <ul id="habitList"></ul>
+
+    </div>
+
+  </div>
+
+  <!-- ================= PROGRESS PAGE ================= -->
+  <div id="progress" class="page">
+
+    <div class="card">
+
+      <h3>📊 Progress Analytics</h3>
+
+      <canvas id="chart"></canvas>
+
+    </div>
+
+  </div>
+
+  <!-- ================= HEATMAP PAGE ================= -->
+  <div id="heatmap" class="page">
+
+    <div class="card">
+
+      <h3>🔥 Productivity Heatmap</h3>
+
+      <p style="font-size:12px;color:gray;">
+        Based on your daily completed tasks
+      </p>
+
+      <div id="heatmapGrid"></div>
+
+    </div>
+
+  </div>
+
+  <!-- MAIN SCRIPT -->
+  <script src="app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,192 @@
+/* =========================
+   ROOT THEME COLORS
+========================= */
+:root {
+  --primary: #6366f1;
+  --secondary: #22c55e;
+  --danger: #ef4444;
+  --bg: #f4f7ff;
+  --card: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+}
+
+/* DARK MODE */
+.dark {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+}
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  max-width: 420px;
+  margin: auto;
+  transition: 0.3s ease;
+}
+
+/* =========================
+   TOP BAR
+========================= */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary);
+  color: white;
+  padding: 12px 15px;
+  border-radius: 0 0 18px 18px;
+}
+
+/* =========================
+   CARDS (GLASS UI)
+========================= */
+.card {
+  background: var(--card);
+  margin: 12px;
+  padding: 15px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+/* glass effect */
+.glass {
+  backdrop-filter: blur(10px);
+}
+
+/* =========================
+   INPUTS + BUTTONS
+========================= */
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 6px 0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 12px;
+  margin-top: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* =========================
+   NAVIGATION (MOBILE STYLE)
+========================= */
+.nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 420px;
+  background: var(--card);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.nav button {
+  background: transparent;
+  color: var(--text);
+  font-size: 18px;
+}
+
+/* =========================
+   PAGES SYSTEM
+========================= */
+.page {
+  display: none;
+  padding-bottom: 80px;
+}
+
+.active {
+  display: block;
+}
+
+/* =========================
+   LISTS
+========================= */
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  padding: 8px;
+  margin: 6px 0;
+  background: rgba(0,0,0,0.03);
+  border-radius: 8px;
+}
+
+/* =========================
+   HEATMAP STYLING
+========================= */
+#heatmapGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 22px);
+  gap: 5px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.cell {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background: #e5e7eb;
+  transition: 0.3s;
+}
+
+/* intensity levels */
+.l1 { background: #bbf7d0; }
+.l2 { background: #4ade80; }
+.l3 { background: #16a34a; }
+.l4 { background: #14532d; }
+
+/* =========================
+   XP / STREAK TEXT
+========================= */
+#xpBox, #streakBox {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+/* =========================
+   AI BOX
+========================= */
+#aiBox {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+/* =========================
+   MOBILE POLISH
+========================= */
+@media (max-width: 420px) {
+  body {
+    padding: 5px;
+  }
+
+  .card {
+    margin: 8px;
+  }
+}

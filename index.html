@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student OS</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Mobile optimization -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body class="center">
+
+  <!-- LOGIN CARD -->
+  <div class="card glass">
+
+    <h1>📘 Student OS</h1>
+    <p style="color: gray;">Your AI-powered study companion</p>
+
+    <!-- USER INPUT -->
+    <input 
+      id="username" 
+      placeholder="Enter your name"
+      autocomplete="off"
+    >
+
+    <!-- BUTTON -->
+    <button onclick="login()">
+      🚀 Start Your Journey
+    </button>
+
+    <!-- SMALL INFO -->
+    <p style="font-size: 12px; color: gray;">
+      Track tasks • Build habits • Earn XP
+    </p>
+
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    
+    // 🔐 LOGIN FUNCTION
+    function login() {
+      let name = document.getElementById("username").value;
+
+      if (!name || name.trim() === "") {
+        alert("Please enter your name");
+        return;
+      }
+
+      // save user locally
+      localStorage.setItem("user", name);
+
+      // initialize default data
+      localStorage.setItem(name+"_xp", 0);
+      localStorage.setItem(name+"_streak", 0);
+      localStorage.setItem(name+"_tasks", JSON.stringify([]));
+      localStorage.setItem(name+"_habits", JSON.stringify({}));
+      localStorage.setItem(name+"_heatmap", JSON.stringify({}));
+
+      // go to app
+      window.location.href = "app.html";
+    }
+
+  </script>
+
+</body>
+</html>
